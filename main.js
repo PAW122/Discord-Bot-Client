@@ -1,10 +1,10 @@
-const app = require("./web/app")
+const main = require("./web/app")
 
 function DiscordBotClient(port,client) {
     if(!port || isNaN(port)) {
         throw new Error (`you entered an invalid port`)
     }
-    app(app)
+    main(port,client)
 }
 
 module.exports = DiscordBotClient

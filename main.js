@@ -1,5 +1,7 @@
 const main = require("./web/app")
 const client_info =require("./handlers/client_info")
+const {send_msg} = require("./handlers/client_actions")
+const server_info = require("./handlers/server_info") // server_info.list()
 
 function DiscordBotClient(port, client) {
     if (!port || isNaN(port)) {
@@ -9,4 +11,9 @@ function DiscordBotClient(port, client) {
     console.log(client_info(client))
 }
 
-module.exports = DiscordBotClient
+module.exports = {
+    client,
+    DiscordBotClient,
+    send_msg,
+    client_info
+}
